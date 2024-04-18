@@ -15,6 +15,8 @@
 <script setup lang="ts">
 import { useRouter, useRoute, RouteRecordRaw } from "vue-router";
 import { computed } from "vue";
+import { useStore } from "vuex";
+const store = useStore();
 const route = useRoute();
 const router = useRouter();
 
@@ -29,7 +31,10 @@ const keepaliveRoutes = computed(() => {
 });
 
 const jumpTest2 = () => {
-  router.push({ path: "/test2" });
+  const getPerson = store.getters.getPerson;
+  console.log(getPerson.age);
+  store.dispatch("setAgeGrow", 18);
+  // router.push({ path: "/test2" });
 };
 </script>
 <style scoped lang="ts"></style>

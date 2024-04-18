@@ -2,7 +2,8 @@
   <div class="box">
     <p>{{ result.num }}</p>
     <el-input v-model="input" style="width: 240px" placeholder="Please input" />
-    <el-button type="primary" @click="test">Primary</el-button>
+    <br/>
+    <el-button type="primary" @click="test">确定</el-button>
   </div>
 </template>
 <script setup lang="ts" name="home">
@@ -17,6 +18,9 @@ import {
   onUnmounted,
 } from "vue";
 //const props = defineProps<{ msg: string }>();
+import { useStore } from "vuex";
+const store = useStore();
+
 const name = ref<string>("56");
 const input = ref("");
 const ctrl = reactive({
@@ -38,20 +42,15 @@ const result = computed(() => {
 //   }
 // );
 
-watch(
-  [name, () => ctrl.url],
-  (newValue, oldValue) => {
-
-  },
-  {
-    immediate: true,
-  }
-);
+watch([name, () => ctrl.url], (newValue, oldValue) => {}, {
+  immediate: true,
+});
 
 watchEffect(() => {});
 
 function test() {
   name.value = "加油！";
+  console.log(store.state.person.age);
   emit("change", name.value, name.value + "时来运转", name.value + "否极泰来");
 }
 
@@ -61,7 +60,7 @@ function dealData() {
 
 onMounted(() => {
   nextTick(() => {
-  //  console.log(ctrl.url);
+    //  console.log(ctrl.url);
   });
 });
 
