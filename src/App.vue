@@ -4,38 +4,32 @@
     <router-link to="/test">test</router-link>
   </div>
   <el-button type="primary" @click="jumpTest2">Primary</el-button>
-  <router-view v-slot="{ Component, route }">
+  <router-view v-slot="{ Component }">
     <transition>
-      <keep-alive>
-        <component
-          :is="Component"
-          v-if="route.meta.keepAlive == true"
-          :key="route.path"
-          msg="测试"
-        />
+      <keep-alive :include="keepaliveRoutes">
+        <component :is="Component" />
       </keep-alive>
     </transition>
-    <transition>
-      <component
-        :is="Component"
-        v-if="route.meta.keepAlive == false"
-        :key="route.path"
-        msg="测试"
-      />
-    </transition>
   </router-view>
-  <!-- <keep-alive>
-    <router-view v-if="route.meta.keepAlive"></router-view>
-  </keep-alive>
-  <router-view v-if="!route.meta.keepAlive"></router-view> -->
 </template>
 <script setup lang="ts">
-import { useRouter, useRoute } from "vue-router";
+import { useRouter, useRoute, RouteRecordRaw } from "vue-router";
+import { computed } from "vue";
 const route = useRoute();
 const router = useRouter();
+
+const keepaliveRoutes = computed(() => {
+  // 根据路由的meta属性决定是否缓存
+  if (route.meta && route.meta.keepAlive) {
+    // 如果当前路由需要被缓存，则返回当前组件的name
+    console.log(route.name);
+    return route.name;
+  }
+  return null;
+});
 
 const jumpTest2 = () => {
   router.push({ path: "/test2" });
 };
 </script>
-<style scoped></style>
+<style scoped lang="ts"></style>

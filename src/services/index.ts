@@ -4,7 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 export const routes: RouteRecordRaw[] = [
     {
         path: '/',
-        name: 'index',
+        name: 'home',
         component: () => import('@/views/home/index.vue'),
         meta: { keepAlive: true, },
         children: [],

@@ -2,6 +2,7 @@ import { defineConfig, createLogger } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+import  VueSetupExtend from 'vite-plugin-vue-setup-extend'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import path from 'path'
 
@@ -18,6 +19,7 @@ export default defineConfig({
     Components({
       resolvers: [ElementPlusResolver()],
     }),
+    VueSetupExtend(),
   ],
   //全局引入
   css: {
