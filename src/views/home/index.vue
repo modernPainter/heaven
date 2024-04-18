@@ -4,6 +4,7 @@
     <el-input v-model="input" style="width: 240px" placeholder="Please input" />
     <br/>
     <el-button type="primary" @click="test">确定</el-button>
+    <a-button type="primary" @click="success">ant design Primary Button</a-button>
   </div>
 </template>
 <script setup lang="ts" name="home">
@@ -19,6 +20,7 @@ import {
 } from "vue";
 //const props = defineProps<{ msg: string }>();
 import { useStore } from "vuex";
+import { message } from 'ant-design-vue';
 const store = useStore();
 
 const name = ref<string>("56");
@@ -57,6 +59,10 @@ function test() {
 function dealData() {
   console.log(ctrl.url);
 }
+
+const success = () => {
+  message.success('This is a success message');
+};
 
 onMounted(() => {
   nextTick(() => {
