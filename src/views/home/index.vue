@@ -44,7 +44,9 @@ const result = computed(() => {
 //   }
 // );
 
-watch([name, () => ctrl.url], (newValue, oldValue) => {}, {
+watch([name, () => ctrl.url], (newValue) => {
+  console.log(newValue)
+}, {
   immediate: true,
 });
 

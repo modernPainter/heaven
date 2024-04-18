@@ -45,8 +45,8 @@ const result = computed(() => {
 
 watch(
   [name, () => ctrl.url],
-  (newValue, oldValue) => {
-
+  (newValue) => {
+    console.log(newValue);
   },
   {
     immediate: true,
@@ -67,7 +67,7 @@ function dealData() {
 
 onMounted(() => {
   nextTick(() => {
-  //  console.log(ctrl.url);
+    //  console.log(ctrl.url);
   });
 });
 

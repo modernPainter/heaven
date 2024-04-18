@@ -43,9 +43,15 @@ const result = computed(() => {
 //   }
 // );
 
-watch([name, () => ctrl.url], (newValue, oldValue) => {}, {
-  immediate: true,
-});
+watch(
+  [name, () => ctrl.url],
+  (newValue) => {
+    console.log(newValue);
+  },
+  {
+    immediate: true,
+  }
+);
 
 watchEffect(() => {});
 

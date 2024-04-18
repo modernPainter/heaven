@@ -4,6 +4,7 @@
     <router-link to="/test">test</router-link>
   </div>
   <el-button type="primary" @click="jumpTest2">Primary</el-button>
+  <el-button type="primary" @click="goIt">test2</el-button>
   <router-view v-slot="{ Component }">
     <transition>
       <keep-alive :include="keepaliveRoutes">
@@ -13,7 +14,7 @@
   </router-view>
 </template>
 <script setup lang="ts">
-import { useRouter, useRoute, RouteRecordRaw } from "vue-router";
+import { useRouter, useRoute } from "vue-router"; //RouteRecordRaw
 import { computed } from "vue";
 import { useStore } from "vuex";
 const store = useStore();
@@ -34,7 +35,11 @@ const jumpTest2 = () => {
   const getPerson = store.getters.getPerson;
   console.log(getPerson.age);
   store.dispatch("setAgeGrow", 18);
-  // router.push({ path: "/test2" });
 };
+
+const goIt = () => {
+  router.push({ path: "/test2" });
+};
+
 </script>
 <style scoped lang="ts"></style>
