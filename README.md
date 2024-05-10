@@ -23,7 +23,7 @@
 如果觉得我写的不错，可以请我喝杯咖啡！
 
 [支付宝]
-![image](https://github.com/modernPainter/heaven/blob/main/src/assets/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240510170506.jpg?width=350)
+<img src="https://github.com/modernPainter/heaven/blob/main/src/assets/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240510170506.jpg" width="350px" />
 
 [微信]
-![image](https://github.com/modernPainter/heaven/blob/main/src/assets/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240510170509.jpg)
+<img src="https://github.com/modernPainter/heaven/blob/main/src/assets/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240510170509.jpg" width="350px" />
