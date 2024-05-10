@@ -17,3 +17,8 @@
     vue-router
 
     vuex
+
+# others
+
+如果觉得我写的不错，可以请我喝杯咖啡！
+src/assets/images/微信图片_20240510170506.jpg
